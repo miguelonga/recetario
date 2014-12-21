@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
 
   get 'misrecetas' => "recipes#creador"
-  get 'categories' => "recipes#category_index"
+  get 'grupos' => "recipes#group_index"
 
   root "recipes#index"
 end

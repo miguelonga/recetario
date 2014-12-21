@@ -15,7 +15,7 @@
 				%ul.nav.navbar-nav.navbar-right
 					%li= link_to "Nueva Receta", new_recipe_path
 					%li= link_to "Mis Recetas", misrecetas_path
-					%li= link_to "Ver grupos", categories_path
+					%li= link_to "Ver grupos", grupos_path
 					%li= link_to "Salir", destroy_user_session_path, method: :delete
 			- else
 				%ul.nav.navbar-nav.navbar-right
