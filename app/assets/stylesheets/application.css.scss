@@ -64,6 +64,18 @@ body {
 
 	}
 
+.cat_wrap{
+	background-color: white;
+	border-radius: 5px;
+	margin-bottom: 40px;
+	@include box-shadow;
+	text-align: center;
+	height: 200px;
+	}
+	h2 {
+		margin-top: 20px;
+	}
+
 
 
 .recipe {

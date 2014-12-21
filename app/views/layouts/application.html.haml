@@ -13,10 +13,9 @@
 
 			- if user_signed_in?
 				%ul.nav.navbar-nav.navbar-right
-					- Category.all.each do |category|
-						= link_to category.name, recipes_path(category: category.name)
 					%li= link_to "Nueva Receta", new_recipe_path
 					%li= link_to "Mis Recetas", misrecetas_path
+					%li= link_to "Ver grupos", categories_path
 					%li= link_to "Salir", destroy_user_session_path, method: :delete
 			- else
 				%ul.nav.navbar-nav.navbar-right

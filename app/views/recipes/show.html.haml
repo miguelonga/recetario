@@ -9,6 +9,9 @@
 				%p
 				Escrita por:
 				= @recipe.user.name
+				= link_to like_recipe_path(@recipe), method: :put, class: "btn btn-default" do
+					%span.glyphicon.glyphicon-heart
+						= @recipe.get_upvotes.size
 				
 
 	.row
