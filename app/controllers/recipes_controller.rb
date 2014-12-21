@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-	before_action :find_receta, only: [:show, :edit, :update, :destroy]
+	before_action :find_receta, only: [:show, :edit, :update, :destroy, :upvote]
 	before_action :authenticate_user!, except: [:index, :show]
 	before_filter :check_user, only: [:edit, :update, :destroy]
 
@@ -43,6 +43,11 @@ class RecipesController < ApplicationController
 	def destroy
 		@recipe.destroy
 		redirect_to root_path, notice: "Successfully deleted recipe"
+	end
+
+	def upvote
+		@recipe.upvote_by current_user
+		redirect_to :back
 	end
 
 	private

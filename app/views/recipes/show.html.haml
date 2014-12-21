@@ -29,6 +29,9 @@
 	.row
 		.col-md-12
 			= link_to "Back", root_path, class: "btn btn-default"
+			= link_to like_recipe_path(@recipe), method: :put, class: "btn btn-default" do
+				%span.glyphicon.glyphicon-heart
+					= @recipe.get_upvotes.size
 			- if (user_signed_in?) && (current_user == @recipe.user)
 				= link_to "Edit", edit_recipe_path, class: "btn btn-default"
 				= link_to "Delete", recipe_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-default"
