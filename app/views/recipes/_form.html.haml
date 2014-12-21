@@ -8,6 +8,7 @@
 				- @recipe.errors.full_messages.each do |msg|
 					%li= msg
 	.panel-body
+		= f.collection_select :category_id, Category.all, :id, :name, {promt: "Escoge un grupo"}
 		= f.input :title, placeholder: "¿Que nombre tiene?", label: false, input_html: { class: 'form-control', style: 'margin-top: 8px' }
 		= f.input :description, placeholder: "Sígue contando", label: false, input_html: { class: 'form-control', style: 'margin-top: 8px' }
 		= f.input :image, label: false, input_html: { class: 'form-control', style: 'margin-top: 8px' }

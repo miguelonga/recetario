@@ -1,6 +1,7 @@
 class Recipe < ActiveRecord::Base
 	acts_as_votable
-	belongs_to :user 
+	belongs_to :user
+	belongs_to :category 
 
 	has_many :ingredients
 	has_many :directions
