@@ -1,0 +1,29 @@
+!!! 5
+%html
+%head
+	%title Recipe App
+	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+	= javascript_include_tag 'application', 'data-turbolinks-track' => true
+	= csrf_meta_tags
+
+%body
+	%nav.navbar.navbar-default
+		.container
+			.navbar-brand= link_to "Receta · Me", root_path
+
+			- if user_signed_in?
+				%ul.nav.navbar-nav.navbar-right
+					%li= link_to "Nueva Receta", new_recipe_path
+					%li= link_to "Mis Recetas", misrecetas_path
+					%li= link_to "Salir", destroy_user_session_path, method: :delete
+			- else
+				%ul.nav.navbar-nav.navbar-right
+					%li= link_to "Entra", new_user_session_path
+					%li= link_to "Registrate", new_user_registration_path
+					
+
+	.container
+		- flash.each do |name, msg|
+			= content_tag :div, msg, class: "alert"
+
+		= yield

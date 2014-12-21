@@ -1,0 +1,33 @@
+= simple_form_for @recipe, html: { multipart: true } do |f|
+	- if @recipe.errors.any?
+		#errors
+			%p
+				= @recipe.errors.count
+				Prevented this recipe froms saving
+			%ul
+				- @recipe.errors.full_messages.each do |msg|
+					%li= msg
+	.panel-body
+		= f.input :title, placeholder: "¿Que nombre tiene?", label: false, input_html: { class: 'form-control', style: 'margin-top: 8px' }
+		= f.input :description, placeholder: "Sígue contando", label: false, input_html: { class: 'form-control', style: 'margin-top: 8px' }
+		= f.input :image, label: false, input_html: { class: 'form-control', style: 'margin-top: 8px' }
+
+		.row
+			.panel-body
+				%h3 Ingredientes
+				#ingredients
+					= f.simple_fields_for :ingredients do |ingredient|
+						= render 'ingredient_fields', f: ingredient
+					.links
+						= link_to_add_association 'Más ingredientes', f, :ingredients, class: "btn btn-default add-button"
+
+		.row
+			.panel-body
+				%h3 Pasos
+				#directions
+					= f.simple_fields_for :directions do |direction|
+						= render 'direction_fields', f: direction
+					.links
+						= link_to_add_association 'Más pasos', f, :directions, class: "btn btn-default add-button"
+
+		= f.button :submit, class: "btn btn-primary"

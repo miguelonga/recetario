@@ -1,0 +1,24 @@
+<div class="row">
+	<div class="col-sm-4 col-sm-offset-4" style="background:white;border:2px solid #d5d5d5;border-radius:5px;">
+		<h2>Nuevo Usuario</h2>
+
+		<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+		  <%= f.error_notification %>
+
+		  <div class="form-inputs">
+		    <%= f.input :name, required: true, autofocus: true, input_html: { class: 'form-control' } %>
+		    <%= f.input :email, required: true, input_html: { class: 'form-control' } %>
+		    <%= f.input :password, required: true, input_html: { class: 'form-control' } %>
+		    <%= f.input :password_confirmation, required: true, input_html: { class: 'form-control' } %>
+		  </div>
+			<br>
+		  <div class="form-actions">
+		    <%= f.button :submit, "Sign up", class: "btn btn-primary" %>
+		  </div>
+		  <br>
+		<% end %>
+
+		<%= render "devise/shared/links" %>
+		<br>
+	</div>
+</div>
