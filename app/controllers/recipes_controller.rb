@@ -57,8 +57,12 @@ class RecipesController < ApplicationController
 
 	private
 
+	def user
+		current_user
+	end
+
 	def recipe_params
-		params.require(:recipe).permit(:title, :description, :category_id, :image, ingredients_attributes: [:id, :name, :_destroy], directions_attributes: [:id, :step, :_destroy]) 
+		params.require(:recipe).permit(:title, :description, :user_id, :category_id, :image, ingredients_attributes: [:id, :name, :_destroy], directions_attributes: [:id, :step, :_destroy]) 
 	end
 
 	def find_receta

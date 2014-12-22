@@ -6,7 +6,7 @@
 
   has_many :recipes, dependent: :destroy
 
-  def self.find_or_create_from_auth_hash(auth_hash)
+   def self.find_or_create_from_auth_hash(auth_hash)
    	find_by_auth_hash(auth_hash) || create_from_auth_hash(auth_hash)
    end
 
@@ -40,7 +40,32 @@
    	end
    end
 
-  def facebook
-  	@facebook ||= Koala::Facebook::Api.new(oauth_token)
-  end
+   def facebook
+    @facebook ||= Koala::Facebook::API.new(oauth_token)
+   end
+	
+   def get_profile_info
+    self.facebook.get_object("me")
+   end
+
+   def get_location
+    h = get_profile_info["location"]
+    h["name"]
+   end
+
+   def get_books
+    self.facebook.get_connection("me", "books")
+   end
+
+   def get_profile_picture
+    self.facebook.get_picture(uid)
+   end
+
+   def verify_permissions
+    p = self.facebook.get_connection("me", "permissions")
+    pf = p.first
+    pf["publish_actions"]
+   end
+   
+
 end

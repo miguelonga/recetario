@@ -1,0 +1,6 @@
+.container
+	- @users.each do |u|
+		.col-md-6.col-md-offset-3.cat_wrap
+			%h1= link_to u.name, u
+			%h1= u.recipes.size
+

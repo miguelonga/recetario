@@ -35,7 +35,7 @@ gem 'devise', '~> 3.4.1'
 
 gem 'omniauth-facebook'
 
-gem "koala", "~> 1.10.0rc"
+gem 'koala'
 
 gem 'groupify'
 
