@@ -19,6 +19,7 @@
 					%li= link_to "Salir", destroy_user_session_path, method: :delete
 			- else
 				%ul.nav.navbar-nav.navbar-right
+					%li= link_to "Facebook", user_omniauth_authorize_path(:facebook)
 					%li= link_to "Entra", new_user_session_path
 					%li= link_to "Registrate", new_user_registration_path
 					

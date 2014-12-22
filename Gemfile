@@ -33,6 +33,10 @@ gem 'cocoon', '~> 1.2.6'
 
 gem 'devise', '~> 3.4.1'
 
+gem 'omniauth-facebook'
+
+gem "koala", "~> 1.10.0rc"
+
 gem 'groupify'
 
 gem 'acts_as_votable', '~> 0.10.0'
