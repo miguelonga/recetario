@@ -6,6 +6,9 @@
 
   has_many :recipes, dependent: :destroy
 
+  has_attached_file :avatar, styles: { :medium => "300x300#" }
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+
    def self.find_or_create_from_auth_hash(auth_hash)
    	find_by_auth_hash(auth_hash) || create_from_auth_hash(auth_hash)
    end

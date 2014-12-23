@@ -70,15 +70,36 @@ body {
 	margin-bottom: 40px;
 	@include box-shadow;
 	text-align: center;
-	height: 200px;
+	padding-top: 50px
 	}
 	h2 {
-		margin-top: 20px;
+		margin: 20px 20px;
+	}
+	img {
+		margin-right: 20px;
+		width: 14%;
+		-webkit-transition: all .3s ease-out;
+	  -moz-transition: all .3s ease-out;
+	  -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+		&:hover {
+			transform: scale(1.075);
+		}
 	}
 
 .cat_wrap2{
 	float: right;
-}
+	}
+	img {
+		width: 14%;
+		-webkit-transition: all .3s ease-out;
+	  -moz-transition: all .3s ease-out;
+	  -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+		&:hover {
+			transform: scale(1.075);
+		}
+	}
 
 
 .recipe {
@@ -107,9 +128,30 @@ body {
 		font-size: 20px;
 		font-weight: normal;
 		line-height: 1.5;
+		text-align: center;
 		a {
 			color: $red;
 		}
+	}
+	h3 {
+		padding: 10px 5%;
+		margin: 0;
+		font-size: 16px;
+		font-weight: normal;
+		line-height: 1.5;
+		a {
+			color: #C2C2C2;
+		}
+	}
+	span {
+		padding-bottom: 40px;
+		padding-right: 10px;
+		margin: 0;
+		font-size:30px;
+		font-weight: normal;
+		line-height: 1.5;
+		text-align: center;
+		color: #C8c8c8
 	}
 }
 
