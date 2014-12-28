@@ -1,3 +1,6 @@
+.container.cat_wrap
+	%h2 Este es el perfil de:
+	%h1= @user.name	
 - @user.recipes.each_slice(4) do |recipes|
 	.row
 		- recipes.each do |recipe|
