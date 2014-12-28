@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   get 'misrecetas' => "recipes#creador"
   get 'grupos' => "recipes#group_index"
+  get 'tags/:tag', to: 'recipes#indexin', as: :tag
 
   root "recipes#index"
 end

@@ -16,6 +16,14 @@ class RecipesController < ApplicationController
 		end
 	end
 
+	def indexin
+  		if params[:tag]
+   			@recipe = Recipe.tagged_with(params[:tag])
+  		else
+   			@recipe = Recipe.all
+  		end
+	end
+
 	def show
 	end	
 
@@ -62,7 +70,7 @@ class RecipesController < ApplicationController
 	end
 
 	def recipe_params
-		params.require(:recipe).permit(:title, :description, :user_id, :category_id, :image, ingredients_attributes: [:id, :name, :_destroy], directions_attributes: [:id, :step, :_destroy]) 
+		params.require(:recipe).permit(:title, :description, :user_id, :category_id, :image, :tag_list, ingredients_attributes: [:id, :name, :_destroy], directions_attributes: [:id, :step, :_destroy]) 
 	end
 
 	def find_receta

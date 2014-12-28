@@ -1,3 +1,6 @@
+.container.cat_wrap.tag_cloud
+	- tag_cloud Recipe.tag_counts, %w[s m l] do |tag, css_class|
+		%div.tag-green= link_to tag.name, tag_path(tag.name), class: css_class
 - Category.all.each do |category|
 	.col-md-3
 		.cat_wrap

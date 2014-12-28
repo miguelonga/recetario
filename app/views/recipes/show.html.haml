@@ -12,6 +12,7 @@
 				= link_to like_recipe_path(@recipe), method: :put, class: "btn btn-default" do
 					%span.glyphicon.glyphicon-heart
 						= @recipe.get_upvotes.size
+				.tab-green= raw @recipe.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
 				
 
 	.row

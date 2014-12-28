@@ -31,6 +31,8 @@ gem 'bootstrap-sass', '~> 3.3.1.0'
 
 gem 'cocoon', '~> 1.2.6'
 
+gem 'acts-as-taggable-on', '~> 3.4'
+
 gem 'devise', '~> 3.4.1'
 
 gem 'omniauth-facebook'
