@@ -4,6 +4,7 @@
 - Category.all.each do |category|
 	.col-md-3
 		.cat_wrap
+			= image_tag Recipe.last.image.url(:medium)
 			%h2= link_to category.name, recipes_path(category: category.name)
 			%h2= category.recipes.size
 	

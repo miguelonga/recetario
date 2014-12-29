@@ -1,7 +1,10 @@
 .container
 	- @users.each do |u|
-		.col-md-6.col-md-offset-3.cat_wrap
-			= image_tag u.avatar.url
-			.row
-				%h2.pull-right= u.recipes.size
-				%h1= link_to u.name, u
+		.row.panel
+			.col-md-4.bg_blur
+			.col-md-6.cat_wrap
+				= image_tag u.avatar.url
+				.row
+					%h2.pull-right= u.recipes.size
+					%h1= link_to u.name, u
+					
