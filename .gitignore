@@ -17,3 +17,6 @@
 
 # Ignore all macOS temp files
 .DS_Store
+
+# Ignore img directories (recipe.image & user.avatar
+/public/system
